@@ -1,0 +1,266 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <h2>
+      Pipeline
+    </h2>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <b>Our pipeline consists of the following three parts,</b>
+    </p>
+    <ol>
+      <li>
+        DATA IMPORT: Integrate the user&#8217;s defined input into the pipeline. 
+        Either generate the network with Moksiskan, basing on the user&#8217;s 
+        defined input or get the user-defined network in GRAPHML format.
+      </li>
+      <li>
+        NETWORK CONTROLLABILITY: Compute the minimal set of driven nodes for 
+        the given target genes in the network generated at the previous step.
+      </li>
+      <li>
+        POSTPROCESSING AND OUTPUT: Highlight those driven nodes that can be 
+        targeted by FDA approved drugs. Generate the network file (GRAPHML, 
+        Cytoscape and PDF) from the original network and by adding additional 
+        annotations to the nodes representing selected driven genes/proteins, 
+        drug-targetable driven genes/proteins, if any, and target genes. 
+        Generate CSV tables with the information about the driven 
+        genes/proteins, and the list of target genes and their control paths 
+        from the driven nodes.
+      </li>
+    </ol>
+    <h2>
+      Input
+    </h2>
+    <p>
+      <b>Our pipeline currently accepts the following inputs from the user:</b>
+    </p>
+    <ol>
+      <li>
+        Seed proteins: List of proteins that will be used as seed nodes by 
+        Moksiskaan to generate the network. This input can be any protein ID 
+        of Homo sapiens.
+      </li>
+      <li>
+        User-defined network: The user has an option to use a custom network 
+        in the pipeline instead of the Moksiskaan network.
+      </li>
+      <li>
+        Cancer Cell Lines: A cancer cell line whose set of essential proteins 
+        will be used as target nodes for the network controllability 
+        algorithm. These nodes can act also as seed nodes if the user decides 
+        so. The user has also the option not to include any of the cell lines. 
+        However, in this case the next field should not be empty.
+      </li>
+      <li>
+        Additional target proteins: A set of target nodes defined in addition 
+        to those in the &#8220;Cancer Cell Lines&quot;. This input can be left empty if 
+        the previous field is set to a cancer cell line. These nodes can act 
+        also as seed nodes if the user decides so.
+      </li>
+      <li>
+        Gap: The gap parameter used by Moksiskaan to generate the network.
+      </li>
+      <li>
+        Include drug information: Should the pipeline include also the drug 
+        target information for the driven nodes. If so, then the driven nodes 
+        for which there exist FDA approved drugs will be specifically 
+        highlighted in the output of the pipeline.
+      </li>
+    </ol>
+    <h2>
+      Output
+    </h2>
+    <ul>
+      <li>
+        <i>driven.csv:</i> The drug-targetable driven nodes and the number of 
+        cancer essential genes they control.
+      </li>
+      <li>
+        <i>extra.csv:</i> Cancer essential genes controlled by non-drug target 
+        genes.
+      </li>
+      <li>
+        <i>details.txt:</i> Details result based on our heuristic search 
+        algorithms, the control path for each controlled target node is 
+        provided.
+      </li>
+      <li>
+        <i>graph.xml:</i> The generated network and can be visualized in 
+        Cytoscape or Gephi
+      </li>
+      <li>
+        <i>visual.pdf:</i> Visualization of controlled graph from GraphML 
+        software as a PDF
+      </li>
+    </ul>
+    <p>
+      
+    </p>
+    <p>
+      <b>Sample Input Data:</b>
+    </p>
+    <table border="1" cellspacing="2" cellpadding="4" width="100%" valign="top">
+      <tr>
+        <th>
+          Gene/ Protein ID
+        </th>
+        <th>
+          Cancer Essential genes ID (Target gene)
+        </th>
+        <th>
+          Drug &#8211;target
+        </th>
+      </tr>
+      <tr>
+        <td>
+          AKT1
+        </td>
+        <td>
+          MTOR
+        </td>
+      </tr>
+      <tr>
+        <td>
+          AKT3
+        </td>
+        <td>
+          ERBB3
+        </td>
+        <td>
+          Select it from pipeline webpage
+        </td>
+      </tr>
+      <tr>
+        <td>
+          NRG1
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+     <tr>
+        <td>
+          MTOR
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ERBB3
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+    </table>
+    <b>Sample results: </b>Gap = two 
+
+    <table border="1" cellspacing="2" cellpadding="4" width="100%" valign="top">
+      <tr>
+        <td>
+          <i>driven.csv </i>
+        </td>
+        <td>
+          <i>extra.csv </i>
+        </td>
+        <td>
+          <i>details.csv</i>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Drug Driven Targets
+        </th>
+        <th>
+          Targets without known drugs
+        </th>
+        <th>
+          
+        </th>
+      </tr>
+      <tr>
+        <td>
+          AKT1
+        </td>
+        <td>
+          NRG1
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          NRG1
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          AKT1
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          ERBB3 &lt;- NRG1
+        </td>
+      </tr>
+      <tr>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          MTOR &lt;- AKT1
+        </td>
+      </tr>
+    </table>
+    <img src="network_sample1.png" width="660px" height="396px">
+  </body>
+</html>
