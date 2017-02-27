@@ -178,7 +178,7 @@ function detect_button() {
 function	list_all_results($id){
     global $app_id;
     global $wwwdir;
-    $app_dir="/var/www/html/remote_call/".$app_id;
+    $app_dir="/var/www/html/".$app_id;
     echo("PREVIOUS RUNS:<br><ul>");
     foreach (glob($app_dir."/".$id."*") as $filename){
     echo("<li><a href=\"".$resurl."/".$filename."/result.html\">".$filename."</a></li>\n");
