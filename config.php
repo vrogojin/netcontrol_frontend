@@ -473,10 +473,10 @@ $fields = array(
         "type" => "checkbox",
         "value" => "drug"
     ),
-    "additional_drug_targets" => array(
+    "drug_targets" => array(
         "desc" => "User defined drug target genes to be included in the analysis",
         "type" => "textarea"
-    ),
+    )
 );
 
 $form_class="form-labels-on-top";
