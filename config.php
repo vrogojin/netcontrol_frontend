@@ -356,10 +356,10 @@ $fields = array(
 		    </div>\n",
 	"type" => "inline"
     ),
-    "useremail" => array(
+/*    "useremail" => array(
 	"desc" => "Please Enter a Valid Email Address:",
 	"type" => "email"
-    ),
+    ),*/
     "network" => array(
         "desc" => "List of Genes/Proteins to Generate the Network",
         "type" => "textarea"
@@ -469,10 +469,14 @@ $fields = array(
     ),
     "drug" => array(
 	"label" => "Target By Drug",
-        "desc" => "Drug Target Approved Proteins",
+        "desc" => "Include in the analysis drug target approved genes from DrugBank",
         "type" => "checkbox",
         "value" => "drug"
-    )
+    ),
+    "additional_drug_targets" => array(
+        "desc" => "User defined drug target genes to be included in the analysis",
+        "type" => "textarea"
+    ),
 );
 
 $form_class="form-labels-on-top";
