@@ -179,11 +179,11 @@ function	list_all_results($id){
     global $app_id;
     global $wwwdir;
     $app_dir="/var/www/html/".$app_id;
-    echo("PREVIOUS RUNS:<br><ul>");
-    foreach (glob($app_dir."/".$id."*") as $filename){
-    echo("<li><a href=\"".$resurl."/".$filename."/result.html\">".$filename."</a></li>\n");
+    echo("<details>\n\t<summary>PREVIOUS RUNS:</summary>\n\t<br>\n\t<ul>");
+    foreach (glob($id."*") as $filename){
+    echo("\t\t<li><a href=\"$filename/result.html\" target=\"_new\">".str_replace($id."_","",$filename)."</a></li>\n");
     }
-    echo("</ul>");
+    echo("\t</ul>\n</details>");
 }
 
 
