@@ -6,7 +6,7 @@ $app_id="net_control";
 
 
 // Page title
-$page_title="NET CONTROL";
+$page_title="NetControl4BioMed";
 
 // The header HTML code
 $head='
@@ -282,7 +282,7 @@ $style='
 // The header HTML code
 $header='
     <header>
-        <h1>NetControl4BioMed 0.1</h1>
+        <h1>NetControl4BioMed: Network Controllability for Biomedicine</h1>
         <a href="documentation.html">Documentation</a>
         <a href="download.html">Download</a>
         <a href="">Home</a>

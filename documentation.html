@@ -2,19 +2,20 @@
 <html><head>
 </head>
   <body>
-<h2> Pipeline </h2>
+<h1>Documentation for NetControl4BioMed</h1>
+<h2>Pipeline</h2>
 <p style="margin-top: 0pt;"> </p>
-<p style="margin-top: 0pt;"> <b>Our pipeline
-consists of the following three parts,</b> </p>
+<p style="margin-top: 0pt;"> <b>The pipeline
+consists of the following three parts:</b> </p>
 <ol>
-<li> DATA IMPORT: Integrate the user&#8217;s defined input into the
+<li> <b>DATA IMPORT:</b> Integrate the user&#8217;s defined input into the
 pipeline. Either generate the network with Moksiskan, basing on the
 user&#8217;s defined input or get the user-defined network in GRAPHML format.
 </li>
-<li> NETWORK CONTROLLABILITY: Compute the minimal set of driven
+<li> <b>NETWORK CONTROLLABILITY:</b> Compute the minimal set of driven
 nodes for the given target genes in the network generated at the
 previous step. </li>
-<li> POSTPROCESSING AND OUTPUT: Highlight those driven nodes
+<li> <b>POSTPROCESSING AND OUTPUT:</b> Highlight those driven nodes
 that can be targeted by FDA approved drugs. Generate the network file
 (GRAPHML, Cytoscape and PDF) from the original network and by adding
 additional annotations to the nodes representing selected driven
@@ -24,27 +25,27 @@ genes/proteins, and the list of target genes and their control paths
 from the driven nodes. </li>
 </ol>
 <h2> Input </h2>
-<p> <b>Our pipeline currently accepts the following inputs
+<p> <b>The pipeline currently accepts the following inputs
 from the user:</b> </p>
 <ol>
-<li> Seed proteins: List of proteins that will be used as seed
+<li> <b>Seed proteins:</b> List of proteins that will be used as seed
 nodes by Moksiskaan to generate the network. This input can be any
 protein ID of Homo sapiens. </li>
-<li> User-defined network: The user has an option to use a
+<li> <b>User-defined network:</b> The user has an option to use a
 custom network in the pipeline instead of the Moksiskaan network. </li>
-<li> Cancer Cell Lines: A cancer cell line whose set of
+<li> <b>Cancer Cell Lines:</b> A cancer cell line whose set of
 essential proteins will be used as target nodes for the network
 controllability algorithm. These nodes can act also as seed nodes if
 the user decides so. The user has also the option not to include any of
 the cell lines. However, in this case the next field should not be
 empty. </li>
-<li> Additional target proteins: A set of target nodes defined
+<li> <b>Additional target proteins:</b> A set of target nodes defined
 in addition to those in the &#8220;Cancer Cell Lines". This input can be left
 empty if the previous field is set to a cancer cell line. These nodes
 can act also as seed nodes if the user decides so. </li>
-<li> Gap: The gap parameter used by Moksiskaan to generate the
+<li> <b>Gap:</b> The gap parameter used by Moksiskaan to generate the
 network. </li>
-<li> Include drug information: Should the pipeline include also
+<li> <b>Include drug information:</b> Should the pipeline include also
 the drug target information for the driven nodes. If so, then the
 driven nodes for which there exist FDA approved drugs will be
 specifically highlighted in the output of the pipeline. </li>
@@ -64,43 +65,27 @@ can be visualized in Cytoscape or Gephi </li>
 controlled graph from GraphML software as a PDF </li>
 </ul>
 <p> </p>
-<p> <b>Sample Input Data:</b></p>
-<p><b>Case study 1: Breast cancer</b></p>
-<table valign="top" border="1" cellpadding="4" cellspacing="2" width="100%">
+<h2>Sample Case Studies:</h2>
+<h3>Case study 1: Breast cancer</h3>
+<b>INPUT:</b>
+<table valign="top" border="1" cellpadding="4" cellspacing="2" width="50%">
 <tbody>
 <tr>
-<th> Gene/ Protein ID </th>
-<th> Cancer Essential genes ID (Target gene) </th>
-<th> Drug &#8211;target </th>
+<th> List of Genes/Proteins to Generate the Network </th>
+<th> List of Additional Target Genes </th>
+<th> Gap Between Genes</th>
 </tr>
 <tr>
-<td> AKT1 </td>
-<td> MTOR </td>
-</tr>
-<tr>
-<td> AKT3 </td>
-<td> ERBB3 </td>
-<td> Select it from pipeline webpage </td>
-</tr>
-<tr>
-<td> NRG1 </td>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td> MTOR </td>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td> ERBB3 </td>
-<td> </td>
-<td> </td>
+<td> AKT1<br> AKT3<br> NRG1</td>
+<td> MTOR<br> ERBB3</td>
+<td> One </td>
 </tr>
 </tbody>
 </table>
-<b>Sample results: </b>Gap = one
-<table valign="top" border="1" cellpadding="4" cellspacing="2" width="100%">
+<p> </p>
+<b>OUTPUT:</b><br>
+(Please note that NetControl4BioMed is a stochastic tool and for the same input it may give one of several different outputs. The following is just one of possible outputs for the input above.)
+<table valign="top" border="1" cellpadding="4" cellspacing="2" width="50%">
 <tbody>
 <tr>
 <td> <i>driven.csv </i> </td>
@@ -108,44 +93,19 @@ controlled graph from GraphML software as a PDF </li>
 <td> <i>details.txt</i> </td>
 </tr>
 <tr>
-<th> Drug Driven Targets </th>
-<th> Targets without known drugs </th>
-<th> </th>
-</tr>
-<tr>
 <td> AKT1 </td>
 <td> NRG1 </td>
-<td> </td>
-</tr>
-<tr>
-<td> </td>
-<td> </td>
-<td> NRG1 </td>
-</tr>
-<tr>
-<td> </td>
-<td> </td>
-<td> AKT1 </td>
-</tr>
-<tr>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-<tr>
-<td> </td>
-<td> </td>
-<td> ERBB3 &lt;- NRG1 </td>
-</tr>
-<tr>
-<td> </td>
-<td> </td>
-<td> MTOR &lt;- AKT1 </td>
+<td> NRG1 <br> AKT1 <br> ERBB3 &lt;- NRG1 <br> MTOR &lt;- AKT1 </td>
 </tr>
 </tbody>
 </table>
 <br>
 <img style="width: 760px; height: 455px;" alt="Network sample 1" src="network_sample1.png"><br>
+<br>
+<br>
+<br>
+<br>
+<br>
 Case study 2: Type 2 diabetic<br>
 <table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
 <tbody>
