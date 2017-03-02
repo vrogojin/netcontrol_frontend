@@ -23,7 +23,7 @@ function getPageHeight() {
     <a href="download.html" target="_new">Download</a>
     <a href=".">Home</a>
 </header>
-<div class=\"main-content\">
+<div class=\"main-content\" style="width: 1600px; margin:10 auto; background-color: white; ">
 <h2>Pipeline</h2>
 <p style="margin-top: 0pt;"> </p>
 <p style="margin-top: 0pt;"> <b>The pipeline
@@ -89,7 +89,7 @@ controlled graph from GraphML software as a PDF </li>
 <h2>Sample Case Studies:</h2>
 <h3>Case study 1: Breast cancer</h3>
 <b>INPUT:</b>
-<table valign="top" border="1" cellpadding="4" cellspacing="2" width="50%">
+<table valign="top" border="1" cellpadding="4" cellspacing="2" width="75%">
 <tbody>
 <tr>
 <th> List of Genes/Proteins to Generate the Network </th>
@@ -106,7 +106,7 @@ controlled graph from GraphML software as a PDF </li>
 <p> </p>
 <b>OUTPUT:</b><br>
 (Please note that NetControl4BioMed is a stochastic tool and for the same input it may give one of several different outputs. The following is just one of possible outputs for the input above.)
-<table valign="top" border="1" cellpadding="4" cellspacing="2" width="50%">
+<table valign="top" border="1" cellpadding="4" cellspacing="2" width="75%">
 <tbody>
 <tr>
 <td> <i>driven.csv </i> </td>
@@ -127,39 +127,26 @@ controlled graph from GraphML software as a PDF </li>
 <br>
 <br>
 <br>
-Case study 2: Type 2 diabetic<br>
-<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<h3>Case study 2: Type 2 diabetic</h3>
+<b>INPUT</b>
+<table valign="top" border="1" cellpadding="4" cellspacing="2" width="75%">
 <tbody>
 <tr>
-<td align="undefined" valign="undefined">Seed
-genes</td>
-<td align="undefined" valign="undefined">Target
-genes</td>
+<th> List of Genes/Proteins to Generate the Network </th>
+<th> List of Additional Target Genes </th>
+<th> Gap Between Genes</th>
 </tr>
 <tr>
-<td align="undefined" valign="undefined">KCNQ1</td>
+<td align="undefined" valign="undefined">KCNQ1 <br> NOTCH2 <br> TCF7L2 <br> HNF1A <br> HNF4A</td>
 <td align="undefined" valign="undefined">CDKN2B</td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">NOTCH2</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">TCF7L2</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">HNF1A</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">HNF4A</td>
-<td align="undefined" valign="undefined"></td>
+<td align="undefined" valign="undefined">Two</td>
 </tr>
 </tbody>
 </table>
-<b>Sample results: </b>Gap = two
-<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<p> </p>
+<b>OUTPUT:</b><br>
+(Please note that NetControl4BioMed is a stochastic tool and for the same input it may give one of several different outputs. The following is just one of possible outputs for the input above.)
+<table valign="top" border="1" cellpadding="4" cellspacing="2" width="75%">
 <tbody>
 <tr>
 <td> <i>driven.csv </i> </td>
@@ -167,128 +154,47 @@ genes</td>
 <td> <i>details.txt</i> </td>
 </tr>
 <tr>
-<td align="undefined" valign="undefined">
-Drug Driven Targets</td>
-<td align="undefined" valign="undefined">
-Targets without known drugs</td>
-<td align="undefined" valign="undefined">CDKN2B
-&lt;- MYC</td>
-</tr>
-<tr>
 <td align="undefined" valign="undefined">MYC</td>
 <td align="undefined" valign="undefined"></td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined"></td>
-<td align="undefined" valign="undefined"></td>
-<td align="undefined" valign="undefined"></td>
+<td align="undefined" valign="undefined">CDKN2B &lt;- MYC</td>
 </tr>
 </tbody>
 </table>
 <br>
 <img style="width: 752px; height: 275px;" alt="Network sample 2" src="network_cs2.png"><br>
 <br>
-Case study 3: Alzheimer's disease<br>
-<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<br>
+<br>
+<br>
+<br>
+<h3>Case study 3: Alzheimer's disease</h3>
+<b>INPUT</b>
+<table valign="top" border="1" cellpadding="4" cellspacing="2" width="75%">
 <tbody>
 <tr>
-<td align="undefined" valign="undefined">Seed
-genes</td>
-<td align="undefined" valign="undefined">Target
-genes</td>
+<th> List of Genes/Proteins to Generate the Network </th>
+<th> List of Additional Target Genes </th>
+<th> Gap Between Genes</th>
 </tr>
 <tr>
 </tr>
 <tr>
-<td align="undefined" valign="undefined">BDNF</td>
+<td align="undefined" valign="undefined">BDNF <br> CHRNA6 <br> CHRNA7 <br> CHRNB4 <br> CR1 <br> EFNA5 <br> EGFR <br> 
+    EPHA1 <br> EPHA4 <br> GAB2 <br> IRS1 <br> NOS3 <br> NTRK2 <br> PIK3R1 <br> PPP1R3A <br> PPP3CB <br> PTGS2 <br> SOS2 </td>
 <td align="undefined" valign="undefined">NOS3</td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">CHRNA6</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">CHRNA7</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">CHRNB4</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">CR1</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">EFNA5</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">EGFR</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">EPHA1</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">EPHA4</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">GAB2</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">IRS1</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">NOS3</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">NTRK2</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">PIK3R1</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">PPP1R3A</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">PPP3CB</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">PTGS2</td>
-<td align="undefined" valign="undefined"></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">SOS2</td>
-<td align="undefined" valign="undefined"></td>
+<td align="undefined" valign="undefined">Two</td>
 </tr>
 </tbody>
 </table>
-<br>
-<b>Sample results: </b>Gap = two<br>
-<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+<p> </p>
+<b>OUTPUT:</b><br>
+(Please note that NetControl4BioMed is a stochastic tool and for the same input it may give one of several different outputs. The following is just one of possible outputs for the input above.)
+<table valign="top" border="1" cellpadding="4" cellspacing="2" width="75%">
 <tbody>
 <tr>
 <td> <i>driven.csv </i> </td>
 <td> <i>extra.csv </i> </td>
 <td> <i>details.txt</i> </td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined">
-Drug Driven Targets</td>
-<td align="undefined" valign="undefined">
-Targets without known drugs</td>
-<td align="undefined" valign="undefined"></td>
 </tr>
 <tr>
 <td align="undefined" valign="undefined">MTOR</td>
