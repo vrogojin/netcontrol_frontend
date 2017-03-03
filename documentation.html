@@ -18,7 +18,7 @@ function getPageHeight() {
 </script>
 <body onload="parent.setFrameSize(getPageHeight());">
 <header>
-    <h1>Download</h1>
+    <h1>Documentation for NetControl4BioMed</h1>
     <a href="documentation.html" target="_new">Documentation</a>
     <a href="download.html" target="_new">Download</a>
     <a href="http://combio.abo.fi/research/network-controlability-project/" target="_new">Network Controlability</a>
@@ -51,27 +51,26 @@ from the driven nodes. </li>
 <p> <b>The pipeline currently accepts the following inputs
 from the user:</b> </p>
 <ol>
-<li> <b>Seed proteins:</b> List of proteins that will be used as seed
+<li> <b>List of Genes/Proteins to Generate the Network:</b> List of genes/proteins that will be used as seed
 nodes by Moksiskaan to generate the network. This input can be any
-protein ID of Homo sapiens. </li>
-<li> <b>User-defined network:</b> The user has an option to use a
+gene/protein name from Homo sapiens genome.</li>
+<li> <b>Custom network:</b> The user has an option to use a
 custom network in the pipeline instead of the Moksiskaan network. </li>
 <li> <b>Cancer Cell Lines:</b> A cancer cell line whose set of
 essential proteins will be used as target nodes for the network
 controllability algorithm. These nodes can act also as seed nodes if
-the user decides so. The user has also the option not to include any of
-the cell lines. However, in this case the next field should not be
-empty. </li>
-<li> <b>Additional target proteins:</b> A set of target nodes defined
-in addition to those in the &#8220;Cancer Cell Lines". This input can be left
-empty if the previous field is set to a cancer cell line. These nodes
+the user decides so.  </li>
+<li> <b>List of Additional Target Genes:</b> A set of target nodes defined
+in addition to those in the &#8220;Cancer Cell Lines". These nodes
 can act also as seed nodes if the user decides so. </li>
-<li> <b>Gap:</b> The gap parameter used by Moksiskaan to generate the
+<li> <b>Gap Between Genes:</b> The gap parameter used by Moksiskaan to generate the
 network. </li>
-<li> <b>Include drug information:</b> Should the pipeline include also
+<li> <b>Target By Drug:</b> Defines if the pipeline includes also
 the drug target information for the driven nodes. If so, then the
 driven nodes for which there exist FDA approved drugs will be
 specifically highlighted in the output of the pipeline. </li>
+<li><b>User defined drug target genes to be included in the analysis:</b> User has an option to include also set of custom drug target proteins. 
+If the "Target By Drug" field is chosen, the user-defined custom drug targets will be considered along with the FDA-aproved drugs targets.</li>
 </ol>
 <h2> Output </h2>
 <ul>
@@ -85,7 +84,14 @@ target node is provided. </li>
 <li> <i>graph.xml:</i> The generated network and
 can be visualized in Cytoscape or Gephi </li>
 <li> <i>visual.pdf:</i> Visualization of
-controlled graph from GraphML software as a PDF </li>
+controlled graph from GraphML software as a PDF. The color codes are defined as follows:
+    <ul>
+	<li><b><font color="green" style="background-color: black;">Green circle</font></b> - mark seed nodes</li>
+	<li><b><font color="aqua" style="background-color: black;">aqua color</font></b> - mark driven nodes that are also drug targets (either for FDA approved or custom user-defined drugs)</li>
+	<li><b><font color="purple" style="background-color: black;">purple color</font></b> - mark target nodes that are being controlled from the driven nodes that are drug targets</li>
+	<li><b><font color="red" style="background-color: black;">red color</font></b> - mark driven nodes that are not drug targets</li>
+	<li><b><font color="yellow" style="background-color: black;">yellow color</font></b> - mark target nodes that are being controlled from the driven nodes that are not drug targets</li>
+    </ul> </li>
 </ul>
 <p> </p>
 <h2>Sample Case Studies:</h2>
