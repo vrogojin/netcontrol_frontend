@@ -28,7 +28,7 @@ $header='
         <h1>NetControl4BioMed: Network Controllability for Biomedicine</h1>
         <a href="documentation.html" target="_new">Documentation</a>
         <a href="download.html" target="_new">Download</a>
-	<a href="http://combio.abo.fi/research/network-controlability-project/" target="_new">Network Controlability</a>
+	<a href="http://combio.abo.fi/research/network-controlability-project/" target="_new">The Project Page</a>
         <a href="about.html"  onclick="window.open(\'about.html\', \'newwindow\', \'width=700, height=520\'); return false;">About</a>
 	<a href=".">Home</a>
     </header>
@@ -106,7 +106,7 @@ $fields = array(
     "title" => array(
 	"desc" => "<div class=\"form-title-row\">\n
 		    <center>\n
-		    <h1>SEARCH</h1>\n
+		    <h1>ANALYZE</h1>\n
 		    </center>\n
 		    </div>\n",
 	"type" => "inline"
@@ -116,16 +116,16 @@ $fields = array(
 	"type" => "email"
     ),*/
     "network" => array(
-        "desc" => "List of Genes/Proteins to Generate the Network",
+        "desc" => "List of Genes/Proteins to Generate the Network <a href=\"help/network.html\"  onclick=\"window.open('help/network.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "textarea"
     ),
     "graphml" => array(
-	"desc" => "Custom network",
+	"desc" => "Custom network <a href=\"help/graphml.html\"  onclick=\"window.open('help/graphml.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
 	"type" => "file",
 	"id"   => "graphml"
     ),
     "cancers" => array(
-        "desc" => "Cancer Cell Lines",
+        "desc" => "Cancer Cell Lines <a href=\"help/cancers.html\"  onclick=\"window.open('help/cancers.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "select",
         "options" => array(
     	    "none" => "None",
@@ -205,16 +205,16 @@ $fields = array(
         )
     ),
     "cancer_checkbox" => array(
-            "desc" => "Include Cancer Cell Line in Network Creation",
+            "desc" => "Include Cancer Cell Line in Network Creation <a href=\"help/cancer_checkbox.html\"  onclick=\"window.open('help/cancer_checkbox.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
             "type" => "checkbox",
             "value" => "cancer-network"
     ),                                
     "target_genes" => array(
-        "desc" => "List of Additional Target Genes",
+        "desc" => "List of Additional Target Genes <a href=\"help/target_genes.html\"  onclick=\"window.open('help/target_genes.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "textarea"
     ),
     "gap" => array(
-        "desc" => "Gap Between Genes",
+        "desc" => "Gap Between Genes <a href=\"help/gap.html\"  onclick=\"window.open('help/gap.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "select",
         "options" => array(
     	    "1" => "One",
@@ -224,12 +224,12 @@ $fields = array(
     ),
     "drug" => array(
 	"label" => "Target By Drug",
-        "desc" => "Include in the analysis drug target approved genes from DrugBank",
+        "desc" => "Include in the analysis drug target approved genes from DrugBank <a href=\"help/drug.html\"  onclick=\"window.open('help/drug.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "checkbox",
         "value" => "drug"
     ),
     "drug_targets" => array(
-        "desc" => "User defined drug target genes to be included in the analysis",
+        "desc" => "User defined drug target genes to be included in the analysis <a href=\"help/drug_targets.html\"  onclick=\"window.open('help/drug_targets.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "textarea"
     )
 );
