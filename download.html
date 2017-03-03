@@ -29,13 +29,33 @@ function getPageHeight() {
 </header>
 <div class=\"main-content\">
 
-<h2>Software main page:</h2><ul><li><a href="http://combio.abo.fi/software/net_control" target="_blank">http://combio.abo.fi/software/net_control</a></li></ul><h2>
+<h2>Main page, the application is deployed as a demo service:</h2><ul><li><a href="http://combio.abo.fi/software/net_control" target="_blank">http://combio.abo.fi/software/net_control</a></li></ul><h2>
 Source code:</h2><ul><li>
 Backend: <a href="http://combio.abo.fi/scm/git/netcontrol" target="_new">http://combio.abo.fi/scm/git/netcontrol</a></li><li>
 Frontend: <a target="_blank" href="http://combio.abo.fi/scm/git/netcontrol_frontend" target="_new">http://combio.abo.fi/scm/git/netcontrol_frontend</a></li><li>
 Docker development package: <a href="http://combio.abo.fi/scm/git/netcontrol_docker" target="_new">http://combio.abo.fi/scm/git/netcontrol_docker</a></li></ul>
 <h2>Distribution:</h2><ul><li><a href="http://combio.abo.fi/www_includes/software/net_con_docker.zip" target="_new">http://combio.abo.fi/www_includes/software/net_con_docker.zip</a></li></ul>
 <h2>System requirenments:</h2><ul><li>OS: Ubuntu or CentOS families</li><li>Software packages: Docker and Docker-compose, Screen, Git</li></ul>
+<h2>How to use it</h2>
+<p>In order to run this application at your premises, you will need to install <a href="https://docs.docker.com/compose/install/" target="_new">docker-compose</a> first.</p>
+<p>If you want to have stable release, get the distribution <a href="http://combio.abo.fi/www_includes/software/net_con_docker.zip">zip file</a>. For instance, you can create folder "/var/docker" and unpack the zip file there.
+Then, you should set the execution flag for "run.sh" and "stop.sh". After that, in order to launch the application, execute "run.sh" script. The first run may take long time (up to 30min, depending on your internet connection) since 
+docker will need to download around 10Gb of all the dependencies. The application will run at ports 80 and 81. You can modify file "docker-compose.yml" to change these ports. Consult docker-compose help and readme.txt 
+for further references.</p>
+
+<p>In case, you want to run latest experimental version of the application, you will be interested in running "run.sh" script within the netcontrol_docker folder that you should clone 
+with "git clone http://combio.abo.fi/scm/git/netcontrol_docker" command. You will need to install the Git package on your machine then. This version on every run will update and rebuild its files from two git projects: 
+<a href="http://combio.abo.fi/scm/git/netcontrol" target="_new">netcontrol</a> and <a href="http://combio.abo.fi/scm/git/netcontrol_frontend" target="_new">netcontrol_frontend</a>.
+</p>
+
+<p>The source code can be taken from the two git projects:
+<ul>
+    <li>Netcontrol Frontend: <a href="http://combio.abo.fi/scm/git/netcontrol_frontend" target="_new">http://combio.abo.fi/scm/git/netcontrol_frontend</a></li>
+    <li>Netcontrol Backend: <a href="http://combio.abo.fi/scm/git/netcontrol" target="_new">http://combio.abo.fi/scm/git/netcontrol</a></li>
+</ul>
+</p>
+
+<p>In case of further questions please contact one of us (see the contact links at the footer).</p>
 
 </div>
 <div id="bottomAnchor" style="height: 0px" />
