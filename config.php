@@ -116,7 +116,7 @@ $fields = array(
 	"type" => "email"
     ),*/
     "network" => array(
-        "desc" => "List of Genes/Proteins to Generate the Network <a href=\"help/network.html\"  onclick=\"window.open('help/network.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
+        "desc" => "List of Seed Proteins to Generate the Network <a href=\"help/network.html\"  onclick=\"window.open('help/network.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "textarea"
     ),
     "graphml" => array(
@@ -210,11 +210,11 @@ $fields = array(
             "value" => "cancer-network"
     ),                                
     "target_genes" => array(
-        "desc" => "List of Additional Target Genes <a href=\"help/target_genes.html\"  onclick=\"window.open('help/target_genes.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
+        "desc" => "List of Additional Target Proteins <a href=\"help/target_genes.html\"  onclick=\"window.open('help/target_genes.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "textarea"
     ),
     "gap" => array(
-        "desc" => "Gap Between Genes <a href=\"help/gap.html\"  onclick=\"window.open('help/gap.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
+        "desc" => "Gap Between Seed Proteins <a href=\"help/gap.html\"  onclick=\"window.open('help/gap.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "select",
         "options" => array(
     	    "1" => "One",
@@ -224,12 +224,12 @@ $fields = array(
     ),
     "drug" => array(
 	"label" => "Target By Drug",
-        "desc" => "Include in the analysis drug target approved genes from DrugBank <a href=\"help/drug.html\"  onclick=\"window.open('help/drug.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
+        "desc" => "Include in the analysis drug target approved proteins from DrugBank <a href=\"help/drug.html\"  onclick=\"window.open('help/drug.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "checkbox",
         "value" => "drug"
     ),
     "drug_targets" => array(
-        "desc" => "User defined drug target genes to be included in the analysis <a href=\"help/drug_targets.html\"  onclick=\"window.open('help/drug_targets.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
+        "desc" => "User defined drug target proteins to be included in the analysis <a href=\"help/drug_targets.html\"  onclick=\"window.open('help/drug_targets.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "textarea"
     )
 );
@@ -339,7 +339,7 @@ $buttons = array(
 function handleNoRS() {
 /*    if((!isset($_POST["target_genes"]) || (trim($_POST["target_genes"]) == ""))&&
 	(!isset($_POST["network"]) || (trim($_POST["network"]) == ""))) {
-        prettyError("Empty input supplied for target genes or network!");
+        prettyError("Empty input supplied for target proteins or network!");
                 return 1;
     }*/
     return 0;
