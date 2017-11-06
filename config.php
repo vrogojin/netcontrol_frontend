@@ -111,10 +111,10 @@ $fields = array(
 		    </div>\n",
 	"type" => "inline"
     ),
-/*    "useremail" => array(
+    "useremail" => array(
 	"desc" => "Please Enter a Valid Email Address:",
 	"type" => "email"
-    ),*/
+    ),
     "network" => array(
         "desc" => "List of Seed Proteins to Generate the Network <a href=\"help/network.html\"  onclick=\"window.open('help/network.html', 'newwindow', 'width=300, height=250'); return false;\"><img src=\"q.png\" width=\"12px\" height=\"12px\"></a>",
         "type" => "textarea"
