@@ -219,7 +219,9 @@ $fields = array(
         "options" => array(
     	    "1" => "One",
     	    "2" => "Two",
-    	    "3" => "Three"
+    	    "3" => "Three",
+	    "4" => "Four",
+	    "5" => "Five"
         )
     ),
     "drug" => array(
@@ -289,6 +291,9 @@ $eraseRemoteDir = false;
 
 // The submit buttons to have and the commands to run, by submit
 // button.
+
+$fullurl = full_url_base($_SERVER);
+
 $buttons = array(
     "run" => array(
         "value"   => "Submit",
@@ -303,11 +308,12 @@ $buttons = array(
             global $remoteTimeout;
             global $app_id;
             global $wwwdir;
+	    global $fullurl;
             $remotedir = $app_id."/".getLocalSession();
 //            echo $app_id."/".getLocalSession();
             $commands = array(
                 "'cd $remotedir;"
-                . "export SESSION_ID=" . getLocalSession() . "; export SERVER_DIR=$wwwdir; $remoteCommand $remotedir;"
+                . "export SESSION_ID=" . getLocalSession() . "; export SERVER_DIR=$wwwdir; export SERVER_URL=$fullurl; $remoteCommand $remotedir;"
 //                . "echo > res; echo --- >> res; cat output >> res; echo --- >> res; cat err >> res'"
 		. "touch res;'"
             );
@@ -346,6 +352,24 @@ function handleNoRS() {
 }
                             
 
+// Get the full URL of the current page
+function url_origin( $s, $use_forwarded_host = false )
+{
+    $ssl      = ( ! empty( $s['HTTPS'] ) && $s['HTTPS'] == 'on' );
+    $sp       = strtolower( $s['SERVER_PROTOCOL'] );
+    $protocol = substr( $sp, 0, strpos( $sp, '/' ) ) . ( ( $ssl ) ? 's' : '' );
+    $port     = $s['SERVER_PORT'];
+    $port     = ( ( ! $ssl && $port=='80' ) || ( $ssl && $port=='443' ) ) ? '' : ':'.$port;
+    $host     = ( $use_forwarded_host && isset( $s['HTTP_X_FORWARDED_HOST'] ) ) ? $s['HTTP_X_FORWARDED_HOST'] : ( isset( $s['HTTP_HOST'] ) ? $s['HTTP_HOST'] : null );
+    $host     = isset( $host ) ? $host : $s['SERVER_NAME'] . $port;
+    return $protocol . '://' . $host;
+}
+
+function full_url_base( $s, $use_forwarded_host = false )
+{
+    $file_path=url_origin( $s, $use_forwarded_host ) . $s['REQUEST_URI'];
+    return dirname($file_path);
+}
 
 // The submit button on the form will be called like this.
 $submitValue = "run";
