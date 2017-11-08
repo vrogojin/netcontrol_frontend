@@ -112,7 +112,7 @@ $fields = array(
 	"type" => "inline"
     ),
     "useremail" => array(
-	"desc" => "Please Enter a Valid Email Address:",
+	"desc" => "Please Enter a Valid Email Address (The pipeline will report its progress here):",
 	"type" => "email"
     ),
     "network" => array(
